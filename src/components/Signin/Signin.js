@@ -18,7 +18,7 @@ class Signin extends React.Component {
   }
 
   onSubmitSignIn = () => {
-    fetch('http://localhost:3000/signin', {
+    fetch('https://facefinder-backend.herokuapp.com/signin', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -28,6 +28,7 @@ class Signin extends React.Component {
     })
       .then(response => response.json())
       .then(user => {
+        console.log(user)
         if (user.id) {
           this.props.loadUser(user)
           this.props.onRouteChange('home');
