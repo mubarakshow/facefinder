@@ -12,7 +12,7 @@ import './App.css';
 
 //You must add your own API key here from Clarifai.
 const app = new Clarifai.App({
- apiKey: 'YOUR_API_HERE'
+ apiKey: 'b73330b21d004647b903bf3f2e2497db'
 });
 
 const particlesOptions = {
@@ -85,7 +85,7 @@ class App extends Component {
         this.state.input)
       .then(response => {
         if (response) {
-          fetch('http://localhost:3000/image', {
+          fetch('http://localhost:3001/image', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
